@@ -1,4 +1,4 @@
-# to-do list (c programming language, terminal based)
+# to-do list (terminal based)
 
 this is from chatGPT
 
