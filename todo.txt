@@ -1,0 +1,10 @@
+Lean Lambda Calculus
+workout
+study systems I and II
+finish this project
+fix the glitches on the portfolio
+make this file behave as expected
+
+
+
+commit changes and push the project to github (ofc what is done so far) xD
