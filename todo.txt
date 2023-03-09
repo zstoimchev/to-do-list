@@ -1,10 +1,6 @@
-Lean Lambda Calculus
-workout
+Learn lambda Calculusworkout
 study systems I and II
 finish this project
-fix the glitches on the portfolio
+fix glitches on the portfolio
 make this file behave as expected
-
-
-
-commit changes and push the project to github (ofc what is done so far) xD
+commit changes and push the project to github

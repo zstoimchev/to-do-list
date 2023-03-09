@@ -5,19 +5,21 @@
 
 int main()
 {
+  char cCategory;
   while (1)
   {
     system("clear");
     printf("Due:\n");
     display_file("todo.txt");
-
+    printf("Completed:\n");
+    display_file("completed.txt");
     printf("=========================================\n");
     printf("a) Mark item as completed -----> type 'a'\n");
     printf("b) Add new item ---------------> type 'b'\n");
     printf("c) Remove existing item -------> type 'c'\n");
     printf("q) Quit -----------------------> type 'q'\n");
     printf("=========================================\n");
-    char cCategory = 'x';
+    cCategory = 'x';
     do
     {
       printf("Enter your choice: ");
