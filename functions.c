@@ -62,8 +62,8 @@ void delete_item(int dChoice)
   fclose(fp);
   fclose(fp_temp);
 
-  fopen("todo.txt", "w");
-  fp_temp = fopen("temp2.txt", "r");
+  fp = fopen("todo.txt", "w");
+  fp_temp = fopen("temp.txt", "r");
   while (fgets(buffer, sizeof(buffer), fp_temp) != NULL)
     fputs(buffer, fp);
   fclose(fp);
