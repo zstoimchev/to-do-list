@@ -4,3 +4,4 @@ finish this project
 fix glitches on the portfolio
 make this file behave as expected
 commit changes and push the project to github
+CHANGE IF STATEMENT TO SWITCH STATEMENT
