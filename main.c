@@ -5,6 +5,7 @@
 
 int main()
 {
+  check_file();  //this needs more more and more work
   char cCategory[3] = "x", *options[] = {"Options:\n",
                                          "==========================================================\n",
                                          "a) Mark item as completed ----------------------> type 'a'\n",

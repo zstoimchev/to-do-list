@@ -8,6 +8,7 @@ void complete_task(int dChoice);
 void delete_item(int dChoice);
 void delete_completed(int dChoice);
 void clear_screen();
+void check_file();
 
 
 #endif // MYFUNCTIONS_H_INCLUDED

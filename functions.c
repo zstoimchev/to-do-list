@@ -2,7 +2,37 @@
 #include <stdlib.h>
 #include <string.h>
 #include "functions.h"
+#include <unistd.h>
 
+//===========================================================================================================
+void check_file()
+{
+  FILE *todo_file = fopen("todo.txt", "r");
+  if (todo_file == NULL)
+  {
+    printf("todo.txt does not exist. Creating file...\n");
+    todo_file = fopen("todo.txt", "w");
+    if (todo_file == NULL)
+    {
+      printf("Error creating todo.txt\n");
+      exit(1);
+    }
+    fclose(todo_file);
+  }
+
+  FILE *completed_file = fopen("completed.txt", "r");
+  if (completed_file == NULL)
+  {
+    printf("completed.txt does not exist. Creating file...\n");
+    completed_file = fopen("completed.txt", "w");
+    if (completed_file == NULL)
+    {
+      printf("Error creating completed.txt\n");
+      exit(1);
+    }
+    fclose(completed_file);
+  }
+}
 //===========================================================================================================
 void clear_screen()
 {
