@@ -13,10 +13,10 @@ void clear_screen()
 #endif
 }
 //===========================================================================================================
-void make_changes(char cCategory)
+void make_changes(char cCategory[3])
 {
   int dChoice;
-  if (cCategory == 'a')
+  if (strcmp(cCategory, "a") == 0)
   {
     clear_screen();
     printf("Enter the corresponding number to mark an item as completed:\n");
@@ -24,14 +24,14 @@ void make_changes(char cCategory)
     scanf("%d", &dChoice);
     complete_task(dChoice);
   }
-  else if (cCategory == 'b')
+  else if (strcmp(cCategory, "b") == 0)
   {
     clear_screen();
     printf("Add your next task (type 'exit' to finish):\n");
     display_file("todo.txt");
     append_file("todo.txt");
   }
-  else if (cCategory == 'c')
+  else if (strcmp(cCategory, "c") == 0)
   {
     clear_screen();
     printf("Enter the corresponding number to remove an item:\n");
@@ -39,11 +39,57 @@ void make_changes(char cCategory)
     scanf("%d", &dChoice);
     delete_item(dChoice);
   }
-
-  else if (cCategory == 'q')
+  else if (strcmp(cCategory, "d") == 0)
+  {
+    clear_screen();
+    printf("Enter the corresponding number to remove an item:\n");
+    display_file("completed.txt");
+    scanf("%d", &dChoice);
+    delete_completed(dChoice);
+  }
+  else if (strcmp(cCategory, "q") == 0)
   {
     exit(0);
   }
+}
+//===========================================================================================================
+void delete_completed(int dChoice)
+{
+  FILE *fp, *fp_temp;
+  char buffer[200];
+  fp = fopen("completed.txt", "r");
+  if (fp == NULL)
+    printf("Error opening file.\n");
+  fp_temp = fopen("temp.txt", "w");
+  if (fp_temp == NULL)
+    printf("Error opening file.\n");
+
+  int n = 1;
+  while (fgets(buffer, sizeof(buffer), fp) != NULL)
+  {
+    if (n == dChoice)
+    {
+      n++;
+      continue;
+    }
+    else
+    {
+      fputs(buffer, fp_temp);
+      n++;
+    }
+  }
+  fclose(fp);
+  fclose(fp_temp);
+
+  fp = fopen("completed.txt", "w");
+  fp_temp = fopen("temp.txt", "r");
+  while (fgets(buffer, sizeof(buffer), fp_temp) != NULL)
+  {
+    fputs(buffer, fp);
+  }
+  fclose(fp);
+  fclose(fp_temp);
+  remove("temp.txt");
 }
 //===========================================================================================================
 void delete_item(int dChoice)
@@ -61,13 +107,15 @@ void delete_item(int dChoice)
   while (fgets(buffer, sizeof(buffer), fp) != NULL)
   {
     if (n == dChoice)
-      continue;
-    else
     {
-      fputs(buffer, fp_temp);
       n++;
+      continue;
     }
+    else
+      fputs(buffer, fp_temp);
+    n++;
   }
+
   fclose(fp);
   fclose(fp_temp);
 
