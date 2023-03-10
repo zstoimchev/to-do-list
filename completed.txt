@@ -1,4 +1,0 @@
-clean up the code
-tri cetiri
-b
-test2

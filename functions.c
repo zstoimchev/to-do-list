@@ -4,12 +4,21 @@
 #include "functions.h"
 
 //===========================================================================================================
+void clear_screen()
+{
+#ifdef _WIN32
+  system("cls");
+#elif __linux__
+  system("clear");
+#endif
+}
+//===========================================================================================================
 void make_changes(char cCategory)
 {
   int dChoice;
   if (cCategory == 'a')
   {
-    system("clear");
+    clear_screen();
     printf("Enter the corresponding number to mark an item as completed:\n");
     display_file("todo.txt");
     scanf("%d", &dChoice);
@@ -17,14 +26,14 @@ void make_changes(char cCategory)
   }
   else if (cCategory == 'b')
   {
-    system("clear");
+    clear_screen();
     printf("Add your next task (type 'exit' to finish):\n");
     display_file("todo.txt");
     append_file("todo.txt");
   }
   else if (cCategory == 'c')
   {
-    system("clear");
+    clear_screen();
     printf("Enter the corresponding number to remove an item:\n");
     display_file("todo.txt");
     scanf("%d", &dChoice);
@@ -68,7 +77,7 @@ void delete_item(int dChoice)
     fputs(buffer, fp);
   fclose(fp);
   fclose(fp_temp);
-  remove("temp2.txt");
+  remove("temp.txt");
 }
 //===========================================================================================================
 void complete_task(int dChoice)

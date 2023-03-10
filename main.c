@@ -14,7 +14,7 @@ int main()
                                 "=========================================\n"};
   while (1)
   {
-    system("clear");
+    clear_screen();
     printf("Due:\n");
     display_file("todo.txt");
     printf("Completed:\n");
