@@ -22,9 +22,9 @@ The application has the following features:
 
 To run the application, locate to where the exacutable/script is stored and run:
 - on Windows: 
-    - ./todo.exe
+    - ./todo.exe    (or simply double-click todo.exe)
 - on Linux:
-    - ./todo.sh
+    - ./todo.sh     (or simply double-click todo.sh)
 
 You can easily add and remove items from the list. To mark item as complete, or to fulfill any other option, just type the corresponding button and press enter. (look at the demo-example below).
 
