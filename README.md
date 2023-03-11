@@ -1,4 +1,4 @@
-# to-do list (terminal based)
+# To-Do List (terminal based)
 
 <!-- Create a simple to-do list application using C programming language.
 
