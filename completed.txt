@@ -1,5 +1,4 @@
-eden dva
-new line
-new last item
-tjkgheruigtnrjhnkdhtdhtr
-eden dva tri cetiri
+Completed task 1
+task 2
+push the code to github
+remove this line
